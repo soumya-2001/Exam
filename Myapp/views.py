@@ -51,7 +51,7 @@ class EmployeeListView(View):
         cat = request.GET.get("category")
         print(cat)
         if cat:
-            qs = qs.filter(Category_object__category_name = cat)
+            qs = qs.filter(category_name__name = cat)
             
         return render(request,"employee_list.html",{"data":qs,"cat":cator})
     
